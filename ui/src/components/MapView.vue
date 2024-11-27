@@ -5,7 +5,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import maplibregl from 'maplibre-gl';
-import { DatabaseQueries } from './DatabaseQueries';
 
 let map: maplibregl.Map;
 
@@ -91,9 +90,6 @@ onMounted(() => {
       zoom: 6,
       bounds: bounds,
     });
-
-    const db = new DatabaseQueries();
-    console.log('DB:', db);
 
     map.on('load', () => {
       map.on('click', onClick);
